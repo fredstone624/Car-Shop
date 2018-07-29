@@ -1,7 +1,5 @@
 body {
-  background-color: #000;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box; }
+  background-color: #000; }
 
 * {
   margin: 0; }
@@ -95,8 +93,7 @@ a {
         flex-wrap: wrap; }
     .content .items .item {
       background-color: green;
-      -ms-flex-preferred-size: 250px;
-          flex-basis: 250px;
+      flex-basis: 250px;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;

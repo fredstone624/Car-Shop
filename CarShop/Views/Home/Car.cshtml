@@ -1,0 +1,17 @@
+﻿@model CarShop.Models.Car
+
+@{
+    Layout = "~/Views/MasterView.cshtml";
+}
+
+<div class="item">
+    @foreach (var img in Model.SubPreview.Split(','))
+    {
+        <img src="@img" alt="@Model.Title">
+    }
+    <div class="item-content">
+        <small>@Model.Type</small>
+        <h3>@Model.Title</h3>
+        <p>@Model.Description</p>
+    </div>
+</div>

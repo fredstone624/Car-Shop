@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/css/style.css")">
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <header id="header">
+        <img src="@Url.Content("~/Content/img/header.jpg")" alt="header">
+    </header>
+    <div class="main">
+        <div class="side-bar">
+            <ul class="nav">
+                <li>@Html.ActionLink("Главная", "Index", "Home")</li>
+                <li><a href="#form">Оформить заказ</a></li>
+            </ul>
+            <ul class="list">
+                <li><a href="#">Audi</a></li>
+                <li><a href="#">Audi</a></li>
+                <li><a href="#">Audi</a></li>
+                <li><a href="#">Audi</a></li>
+                <li><a href="#">Audi</a></li>
+                <li><a href="#">Audi</a></li>
+                <li><a href="#">Audi</a></li>
+                <li><a href="#">Audi</a></li>
+                <li><a href="#">Audi</a></li>
+                <li><a href="#">Audi</a></li>
+                <li><a href="#">Audi</a></li>
+            </ul>
+            <div class="map">
+                <img src="@Url.Content("~/Content/img/map.jpg")" alt="map">
+            </div>
+        </div>
+        <div class="content">
+            <div class="title">
+                <h2>@ViewBag.Title</h2>
+            </div>
+            <div class="items">
+                @RenderBody()
+            </div>
+            <div class="order">
+                <img src="@Url.Content("~/Content/img/order.jpg")" alt="order">
+                <form id="form" action="Home/Lid" method="POST">
+                    <fieldset>
+                        <legend>Оформление заказа</legend>
+                        <input type="text" name="Name" placeholder="Введите ваше имя" required>
+                        <input type="email" name="Email" placeholder="Введите номер e-mail" required>
+                        <select name="Car" required>
+                            <option value="Audi-1">Audi-1</option>
+                            <option value="Audi-3">Audi-2</option>
+                            <option value="Audi-3">Audi-3</option>
+                        </select>
+                        <input class="submit" type="submit" value="Отправить заявку">
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer id="footer">
+        <h3>Copyrite</h3>
+    </footer>
+</body>
+</html>

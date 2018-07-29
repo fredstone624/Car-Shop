@@ -1,92 +1,18 @@
 ﻿@model IEnumerable<CarShop.Models.Car>
 
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="~/Content/css/style.css">
-    <title>CarShop</title>
-</head>
-<body>
-    <header id="header">
-        <img src="~/Content/img/header.jpg" alt="header">
-    </header>
-    <div class="main">
-        <div class="side-bar">
-            <ul class="nav">
-                <li><a href="#">Главная</a></li>
-                <li><a href="#form">Оформить заказ</a></li>
-            </ul>
-            <ul class="list">
-                <li><a href="#">Audi</a></li>
-                <li><a href="#">Audi</a></li>
-                <li><a href="#">Audi</a></li>
-                <li><a href="#">Audi</a></li>
-                <li><a href="#">Audi</a></li>
-                <li><a href="#">Audi</a></li>
-                <li><a href="#">Audi</a></li>
-                <li><a href="#">Audi</a></li>
-                <li><a href="#">Audi</a></li>
-                <li><a href="#">Audi</a></li>
-                <li><a href="#">Audi</a></li>
-            </ul>
-            <div class="map">
-                <img src="~/Content/img/map.jpg" alt="map">
-            </div>
-        </div>
-        <div class="content">
-            <div class="title">
-                <h2>Главная</h2>
-            </div>
-            <div class="items">
-                <div class="item">
-                    <img src="~/Content/img/cars/audi-itm.jpg" alt="Audi">
-                    <div class="item-content">
-                        <small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, nulla.</small>
-                        <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, ex!</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur possimus, est quas, sit suscipit nulla commodi veniam eligendi distinctio quos.</p>
-                        <a href="#">Перейти</a>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="~/Content/img/cars/audi-itm.jpg" alt="Audi">
-                    <div class="item-content">
-                        <small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, nulla.</small>
-                        <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, ex!</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur possimus, est quas, sit suscipit nulla commodi veniam eligendi distinctio quos.</p>
-                        <a href="#">Перейти</a>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="~/Content/img/cars/audi-itm.jpg" alt="Audi">
-                    <div class="item-content">
-                        <small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, nulla.</small>
-                        <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, ex!</h3>
-                        <p>Lorem ipsum </p>
-                        <a href="#">Перейти</a>
-                    </div>
-                </div>
-            </div>
-            <div class="order">
-                <img src="~/Content/img/order.jpg" alt="order">
-                <form id="form" action="Home/Lid" method="POST">
-                    <fieldset>
-                        <legend>Оформление заказа</legend>
-                        <input type="text" name="Name" placeholder="Введите ваше имя" required>
-                        <input type="email" name="Email" placeholder="Введите номер e-mail" required>
-                        <select name="Car" required>
-                            <option value="Audi-1">Audi-1</option>
-                            <option value="Audi-3">Audi-2</option>
-                            <option value="Audi-3">Audi-3</option>
-                        </select>
-                        <input class="submit" type="submit" value="Отправить заявку">
-                    </fieldset>
-                </form>
-            </div>
+@{ 
+    Layout = "~/Views/MasterView.cshtml";
+}
+
+@foreach (var item in Model)
+{
+    <div class="item">
+        <img src="@item.Preview" alt="@item.Title">
+        <div class="item-content">
+            <small>@item.Type</small>
+            <h3>@item.Title</h3>
+            <p>@item.Description</p>
+            @Html.ActionLink("Перейти", "Car", "Home", new { car_id = item.Id })
         </div>
     </div>
-    <footer id="footer">
-        <h3>Copyrite</h3>
-    </footer>
-</body>
-</html>
+}
