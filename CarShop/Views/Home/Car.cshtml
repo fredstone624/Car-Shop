@@ -4,12 +4,17 @@
     Layout = "~/Views/MasterView.cshtml";
 }
 
-<div class="item">
-    @foreach (var img in Model.SubPreview.Split(','))
-    {
-        <img src="@img" alt="@Model.Title">
-    }
-    <div class="item-content">
+<div class="car-item">
+    <div class="car-img">
+        <div class="fade">
+            <img src="@Model.Preview" alt="@Model.Title">
+            @foreach (var img in Model.SubPreview.Split(','))
+            {
+                <img src="@img" alt="@Model.Title">
+            }
+        </div>
+    </div>
+    <div class="car-info">
         <small>@Model.Type</small>
         <h3>@Model.Title</h3>
         <p>@Model.Description</p>

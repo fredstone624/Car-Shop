@@ -12,7 +12,7 @@
             <small>@item.Type</small>
             <h3>@item.Title</h3>
             <p>@item.Description</p>
-            @Html.ActionLink("Перейти", "Car", "Home", new { car_id = item.Id })
+            <a href="@Url.Action("Car", "Home", new { car_id = item.Id })">Перейти</a>
         </div>
     </div>
 }

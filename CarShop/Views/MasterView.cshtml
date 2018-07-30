@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/css/style.css")">
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/css/style.min.css")">
     <title>@ViewBag.Title</title>
 </head>
 <body>
@@ -17,17 +17,7 @@
                 <li><a href="#form">Оформить заказ</a></li>
             </ul>
             <ul class="list">
-                <li><a href="#">Audi</a></li>
-                <li><a href="#">Audi</a></li>
-                <li><a href="#">Audi</a></li>
-                <li><a href="#">Audi</a></li>
-                <li><a href="#">Audi</a></li>
-                <li><a href="#">Audi</a></li>
-                <li><a href="#">Audi</a></li>
-                <li><a href="#">Audi</a></li>
-                <li><a href="#">Audi</a></li>
-                <li><a href="#">Audi</a></li>
-                <li><a href="#">Audi</a></li>
+                @Html.Action("Nav", "Home")
             </ul>
             <div class="map">
                 <img src="@Url.Content("~/Content/img/map.jpg")" alt="map">
@@ -42,7 +32,7 @@
             </div>
             <div class="order">
                 <img src="@Url.Content("~/Content/img/order.jpg")" alt="order">
-                <form id="form" action="Home/Lid" method="POST">
+                <form id="form" method="post">
                     <fieldset>
                         <legend>Оформление заказа</legend>
                         <input type="text" name="Name" placeholder="Введите ваше имя" required>
