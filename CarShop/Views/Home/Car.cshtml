@@ -20,3 +20,23 @@
         <p>@Model.Description</p>
     </div>
 </div>
+
+@section Scripts {
+    @Scripts.Render("~/Content/js/slick.min.js")
+
+    <script>
+        $('.fade').slick({
+            dots: true,
+            infinite: true,
+            speed: 500,
+            fade: true,
+            cssEase: 'linear',
+            adaptiveHeight: true
+        });
+    </script>
+}
+
+@section Styles {
+    @Styles.Render("~/Content/css/slick.css")
+    @Styles.Render("~/Content/css/slick-theme.css")
+}

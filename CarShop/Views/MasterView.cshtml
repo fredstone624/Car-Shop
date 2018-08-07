@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/css/style.min.css")">
-    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css/style.css")
+    @RenderSection("Styles", false)
+    @Scripts.Render("~/Scripts/jquery-3.3.1.min.js")
+    @Scripts.Render("~/Content/js/main.js")
+    <title>@ViewBag.Title - CarShop</title>
 </head>
 <body>
     <header id="header">
@@ -30,26 +33,12 @@
             <div class="items">
                 @RenderBody()
             </div>
-            <div class="order">
-                <img src="@Url.Content("~/Content/img/order.jpg")" alt="order">
-                <form id="form" method="post">
-                    <fieldset>
-                        <legend>Оформление заказа</legend>
-                        <input type="text" name="Name" placeholder="Введите ваше имя" required>
-                        <input type="email" name="Email" placeholder="Введите номер e-mail" required>
-                        <select name="Car" required>
-                            <option value="Audi-1">Audi-1</option>
-                            <option value="Audi-3">Audi-2</option>
-                            <option value="Audi-3">Audi-3</option>
-                        </select>
-                        <input class="submit" type="submit" value="Отправить заявку">
-                    </fieldset>
-                </form>
-            </div>
+            @Html.Action("Form", "Home")
         </div>
     </div>
     <footer id="footer">
         <h3>Copyrite</h3>
     </footer>
+    @RenderSection("Scripts", false)
 </body>
 </html>

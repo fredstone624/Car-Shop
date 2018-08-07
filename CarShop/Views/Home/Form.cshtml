@@ -1,0 +1,14 @@
+﻿<div class="order">
+    <img src="@Url.Content("~/Content/img/order.jpg")" alt="order">
+    <form id="form" action="/Home/Form" method="post">
+        <fieldset>
+            <legend>Оформление заказа</legend>
+            <input type="text" name="Name" placeholder="Введите ваше имя" required>
+            <input type="email" name="Email" placeholder="Введите номер e-mail" required>
+            <select name="Car" required>
+                @Html.Action("FormOptions", "Home", new { car_id = ViewBag.Car })
+            </select>
+            <input class="submit" type="submit" value="Отправить заявку">
+        </fieldset>
+    </form>
+</div>
