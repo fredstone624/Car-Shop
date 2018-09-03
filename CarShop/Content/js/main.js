@@ -2,7 +2,7 @@
     $.ajax({
         method: "POST",
         url: "/Home/Form",
-        data: { Name: name, Email: email, Car: car }
+        data: { userName: name, userEmail: email, carId: car }
     })
         .done(function (msg) {
             alert("Отлично: " + msg);
@@ -11,11 +11,10 @@
         });
 }
 
-$("#form").submit(function () {
+$(document).on('submit', '#form', function () {
+    var Name    = $('input[name=Name]').val();
+    var Email   = $('input[name=Email]').val();
+    var Car     = $('select[name=Car]').val();
 
-    var UserName    = $('input[name=Name]').val();
-    var UserEmail   = $('input[name=Email]').val();
-    var Car         = $('select[name=Car]').val();
-
-    SubmitForm(UserName, UserEmail, Car);
-});
+    SubmitForm(Name, Email, Car);
+})

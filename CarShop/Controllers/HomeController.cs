@@ -37,14 +37,14 @@ namespace CarShop.Controllers
         }
 
         [HttpGet]
-        public ActionResult Form(int car_id = 1)
+        public ActionResult Form(int car_id = 0)
         {
             ViewBag.Car = car_id;
             return PartialView();
         }
 
         [ChildActionOnly]
-        public ActionResult FormOptions(int car_id = 1)
+        public ActionResult FormOptions(int car_id = 0)
         {
             var cars = db.Cars;
             string options = "";
