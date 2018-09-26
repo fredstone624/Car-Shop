@@ -1,17 +1,11 @@
 {
-  "name": "agency",
+  "name": "car-shop",
   "version": "1.0.0",
   "description": "",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fredstone624/Agency-LP.git"
+  "main": "gulpfile.js",
+  "dependencies": {
+    "browser-sync": "^2.24.7"
   },
-  "author": "FredStone",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/fredstone624/Agency-LP/issues"
-  },
-  "homepage": "https://github.com/fredstone624/Agency-LP#readme",
   "devDependencies": {
     "browser-sync": "^2.24.5",
     "gulp": "^3.9.1",
@@ -27,5 +21,18 @@
     "gulp-watch": "^5.0.0",
     "imagemin-pngquant": "^5.1.0",
     "rimraf": "^2.6.2"
-  }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fredstone624/Car-Shop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fredstone624/Car-Shop/issues"
+  },
+  "homepage": "https://github.com/fredstone624/Car-Shop#readme"
 }
