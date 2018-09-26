@@ -5,7 +5,7 @@
         data: { userName: name, userEmail: email, carId: car }
     })
         .done(function (msg) {
-            alert("Отлично: " + msg);
+            alert("Отлично:\n" + msg);
         }).fail(function () {
             alert("При передачи данных произошла ошибка");
         });
